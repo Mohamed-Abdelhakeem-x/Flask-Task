@@ -1,0 +1,28 @@
+.add-task-button{
+    background-color: rgb(255, 179, 37);
+    color: white;
+    border-radius: 8px;
+    border-color: rgb(255, 179, 37);
+    padding: 7px;
+    font-size: large;
+}
+
+.add-task-button:hover{
+    color:rgb(255, 179, 37);
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(255, 179, 37);
+}
+
+.completed-check-box{
+    transform: scale(1.5);
+    margin: 5px;
+}
+
+.task-string-field{
+    border-radius: 7px;
+    padding: 15px;
+    padding-right: 60px;
+    margin: 5px;
+    font-size: 20px;
+}

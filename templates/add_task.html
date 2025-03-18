@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content%}
-
+<div class="main-add-task-page-container">
+<form method="POST">
+    <div class="task-string-field-container">
+        <input type="text" name="title" placeholder="Task Title" class = "task-string-field" required>
+    </div>
+    <div class="checkbox-container">
+        <label>
+            <input type="checkbox" name="completed" class = "completed-check-box"> Completed
+        </label>
+    </div>
+    <div class="add-task-button-container">
+        <button type="submit" class="add-task-button">Add Task</button>
+    </div>
+</form>
+</div>
 {%endblock%}

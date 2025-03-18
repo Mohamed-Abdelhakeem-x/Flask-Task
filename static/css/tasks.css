@@ -1,0 +1,28 @@
+ul {
+    border: 2px solid black;
+    padding: 15px;
+    width: 250px;
+    border-radius: 8px;
+    list-style: circle;
+}
+
+ul li {
+    padding: 5px;
+    border-bottom: 1px solid gray;
+    transition: background 0.3s;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+ul li:hover {
+    background: rgb(255, 243, 172);
+    cursor: pointer;
+}
+
+.ul-container{
+margin: 25px;
+display: grid;
+place-items: center;
+}
