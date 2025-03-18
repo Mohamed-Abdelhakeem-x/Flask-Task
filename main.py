@@ -18,6 +18,7 @@ with app.app_context():
     db.create_all()
 
 @app.route('/')
+@app.route('/todolist')
 def tasks_list():
     tasks = Task.query.all()
     return render_template('tasks.html', tasks=tasks)
