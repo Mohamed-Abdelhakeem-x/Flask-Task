@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for
+from forms import TaskForm
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = 'qfajpej fpoqefj pofjq pj pjeqp'
 
 db = SQLAlchemy(app)
 
@@ -22,14 +24,13 @@ def tasks_list():
 
 @app.route('/add', methods=['GET', 'POST'])
 def add_task():
-    if request.method == 'POST':
-        title = request.form['title']
-        completed = 'completed' in request.form
-        new_task = Task(title=title, completed=completed)
+    form = TaskForm()
+    if form.validate_on_submit():
+        new_task = Task(title=form.title.data, completed=form.completed.data)
         db.session.add(new_task)
         db.session.commit()
         return redirect(url_for('tasks_list'))
-    return render_template('add_task.html')
+    return render_template('add_task.html', form=form)
 
 if __name__ == '__main__':
     app.run(debug=True)
