@@ -3,7 +3,7 @@
 {% block content%}
 <div class="main-add-task-page-container">
     <form method="POST">
-        {{ form.hidden_tag() }}  <!-- CSRF Token -->
+        {{ form.hidden_tag() }}
         <p>{{ form.title.label }} {{ form.title(class = "task-string-field", placeholder="Task Title") }}</p>
         <p>{{ form.completed(class = "completed-check-box") }} {{ form.completed.label }}</p>
         <p>{{ form.submit(class="add-task-button") }}</p>

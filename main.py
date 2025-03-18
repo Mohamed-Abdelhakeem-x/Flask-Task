@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'qfajpej fpoqefj pofjq pj pjeqp'
+app.config['SECRET_KEY'] = '123 456 789'
 
 db = SQLAlchemy(app)
 
